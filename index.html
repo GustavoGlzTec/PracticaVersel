@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserva tu estancia</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Hospedajes tipo AirBNB</p>
+        <h1>Encuentra tu próxima estancia ideal</h1>
+        <p class="subtitle">
+          Explora opciones cómodas y bien ubicadas con una interfaz simple y clara.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="listing-grid" aria-label="Residencias de ejemplo">
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+            alt="Residencia frente a la playa"
+          />
+          <div class="card__body">
+            <h2>Casa Brisa Marina</h2>
+            <p class="location">📍 Playa del Carmen, México</p>
+            <ul class="details">
+              <li>🛏️ 3 habitaciones</li>
+              <li>🛁 1 baño</li>
+              <li>🌊 Vista al mar y acceso directo a la playa</li>
+            </ul>
+            <button type="button" class="reserve-btn" data-property="Casa Brisa Marina">
+              Reservar
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80"
+            alt="Residencia céntrica en ciudad grande"
+          />
+          <div class="card__body">
+            <h2>Loft Central Urban</h2>
+            <p class="location">📍 Madrid Centro, España</p>
+            <ul class="details">
+              <li>🛏️ 2 habitaciones</li>
+              <li>🛁 2 baños</li>
+              <li>🚇 Ubicación céntrica cerca de transporte y restaurantes</li>
+            </ul>
+            <button type="button" class="reserve-btn" data-property="Loft Central Urban">
+              Reservar
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <section class="modal hidden" id="reservation-modal" aria-hidden="true">
+      <div class="modal__overlay" id="modal-overlay"></div>
+      <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <h3 id="modal-title">Reservación</h3>
+        <p id="property-name" class="property-name"></p>
+
+        <form id="reservation-form">
+          <div class="form-grid">
+            <label>
+              Fecha de entrada
+              <input type="date" id="checkin" required />
+            </label>
+            <label>
+              Fecha de salida
+              <input type="date" id="checkout" required />
+            </label>
+          </div>
+
+          <label>
+            Cantidad de días
+            <input type="number" id="days" min="1" placeholder="Ej. 3" required />
+          </label>
+
+          <h4>Datos para pago</h4>
+          <label>
+            Nombre completo
+            <input type="text" id="name" placeholder="Tu nombre" required />
+          </label>
+          <label>
+            Fecha de nacimiento
+            <input type="date" id="birthdate" required />
+          </label>
+          <label>
+            Teléfono
+            <input type="tel" id="phone" placeholder="+52 000 000 0000" required />
+          </label>
+
+          <div class="actions">
+            <button type="submit">Confirmar reservación</button>
+            <button type="button" class="cancel-btn" id="cancel-reservation">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
