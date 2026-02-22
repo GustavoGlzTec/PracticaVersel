@@ -32,7 +32,9 @@
               <li>🛁 1 baño</li>
               <li>🌊 Vista al mar y acceso directo a la playa</li>
             </ul>
-            <button type="button">Reservar</button>
+            <button type="button" class="reserve-btn" data-property="Casa Brisa Marina">
+              Reservar
+            </button>
           </div>
         </article>
 
@@ -49,10 +51,59 @@
               <li>🛁 2 baños</li>
               <li>🚇 Ubicación céntrica cerca de transporte y restaurantes</li>
             </ul>
-            <button type="button">Reservar</button>
+            <button type="button" class="reserve-btn" data-property="Loft Central Urban">
+              Reservar
+            </button>
           </div>
         </article>
       </section>
     </main>
+
+    <section class="modal hidden" id="reservation-modal" aria-hidden="true">
+      <div class="modal__overlay" id="modal-overlay"></div>
+      <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <h3 id="modal-title">Reservación</h3>
+        <p id="property-name" class="property-name"></p>
+
+        <form id="reservation-form">
+          <div class="form-grid">
+            <label>
+              Fecha de entrada
+              <input type="date" id="checkin" required />
+            </label>
+            <label>
+              Fecha de salida
+              <input type="date" id="checkout" required />
+            </label>
+          </div>
+
+          <label>
+            Cantidad de días
+            <input type="number" id="days" min="1" placeholder="Ej. 3" required />
+          </label>
+
+          <h4>Datos para pago</h4>
+          <label>
+            Nombre completo
+            <input type="text" id="name" placeholder="Tu nombre" required />
+          </label>
+          <label>
+            Fecha de nacimiento
+            <input type="date" id="birthdate" required />
+          </label>
+          <label>
+            Teléfono
+            <input type="tel" id="phone" placeholder="+52 000 000 0000" required />
+          </label>
+
+          <div class="actions">
+            <button type="submit">Confirmar reservación</button>
+            <button type="button" class="cancel-btn" id="cancel-reservation">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
